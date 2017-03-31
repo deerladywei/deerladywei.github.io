@@ -1,363 +1,52 @@
 <!DOCTYPE html>
 <html>
 
-  <head lang='en' class="feedback">
+  <head>
     <meta charset="utf-8">
-    <title>免费机票</title>
+    <title>Hello MUI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
     <link rel="stylesheet" href="css/mui.min.css">
-    <link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
-    <link rel="stylesheet" type="text/css" href="css/feedback.css" />
-    <link rel="stylesheet" type="text/css" href="css/app.css" />
+    <style>
+      body {
+        background-color: #000;
+      }
+      .mui-popover {
+        height: 350px;
+        background-color: rgba(0, 0, 0, .3);
+      }
+      .mui-content {
+        padding: 10px;
+        background-color: #000;
+      }
+      .mui-content img {
+        margin: 160px 0;
+        width: 300px;
+        height: 300px;
+      }
+    </style>
   </head>
 
   <body>
-
-    <style>
-      .mui-control-content {
-        background-color: white;
-        min-height: 215px;
-      }
-      .mui-control-content .mui-loading {
-        margin-top: 50px;
-      }
-      body, h1, h3, h4, h5, p {
-        padding: 0;
-        margin: 0;
-      }
-      .share h2{
-            margin-top: 60px;
-            text-align: center;
-            color: #DD5044;
-            animation:  bigger 0.5s infinite  alternate;
-        }
-
-      @keyframes bigger {
-            0%{
-              
-            }
-            100%{
-                color:red;
-            }
-      }
-      .share p {
-        float: right;
-        margin-right: 20px;
-        font-size: 18px;
-        color: #EFEFF4;
-      }
-      .share .tu {
-         text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
-      }
-      .mui-spinner {
-        margin-top: 50%;
-        margin-left: 48%;
-      }
-      .mui-slider-group {
-        height: 620px;
-      }
-      .mui-card {
-        height: 10px;
-      }
-      .mui-scroll {
-         background-color: #F7F4F1;
-      }
-      .title h4{
-        margin: 20px;
-      }
-      .item {
-        margin: 0 20px;
-        margin-bottom: 60px; 
-        border-radius: 20px 20px 0 0;  
-        overflow: hidden; 
-        box-shadow: 0 0 16px #ccc;
-      }
-      .item .body {
-        height: 160px;
-        background:#55bc75;
-        position: relative;
-      }
-      .item .body::after {
-        content: '';
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        width: 50px;
-        height: 50px;
-        background: url(images/logo.jpg) no-repeat;
-      }
-      .item .action {
-        height: 50px;
-        background: #fff;
-        display: flex;
-        padding: 12px 0;
-        position: relative;
-      }
-      .item .action::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: -8px;
-        width: 100%;
-        height: 8px;
-        background-image: url(images/icon.png);
-        background-size: auto 8px;
-      }
-      .item .action span {
-        font-size: 15px;
-        color: #55bc75;
-      }
-      .item .action a {
-        text-align: center;
-        flex: 1;
-        border-right: 1px solid #ccc;
-        line-height: 24px;
-        color: #888;
-      }
-      .two .body {
-        background:#a974bc;
-      }
-      .two .action span {
-        color: #a974bc;
-      }
-      .carbox {
-        width: 50px;
-        height: 30px;
-      }
-      .carbox img {
-        animation: run 7s linear infinite;
-      }
-      @keyframes run {
-        0% {
-          transform:translateX(-50px);
-        }
-        100% {
-          transform:translateX(1000px);
-        }
-      }
-      .extra h4 {
-        position: absolute;
-        top: 30px;
-        left: 60px;
-        font-weight: normal;
-      }
-      .extra p {
-        position: absolute;
-        top: 60px;
-        left: 60px;
-        font-size: 18px;
-      }
-      .extra span {
-        font-size: 18px;
-      }
-      .extra h3 {
-        color: #D92227;
-        position: absolute;
-        bottom: 40px;
-        left: 50%;
-        margin-left: -50px;
-      }
-      .extra i {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        margin-left: -14px;
-        color: #8F8F94;
-        font-size: 16px;
-        font-family: "微软雅黑";
-      }
-      .rule {
-        width: 320px;
-        height: 400px;
-        background:url(images/rule.png) no-repeat;
-        position: absolute;
-        top: 30px;
-        left: 50%;
-        margin-left: -160px;
-      }
-      .rule .box {
-        width: 200px;
-        height: 220px;
-        position: absolute;
-        top: 80px;
-        left: 50%;
-        margin-left: -100px;
-      }
-      .rule .box p {
-        font-size: 22px;
-        font-family: "宋体";
-        line-height: 30px;
-        color: #DF5D32
-      }
-      .image-up {
-        width: 100%;
-        height: 106px;
-        background-color: #fff;
-        position: relative;
-      }
-      .image-up::after {
-        content:'';
-        width: 90px;
-        height: 90px;
-        position: absolute;
-        top: 10px;
-        left: 12px;
-        background: url(images/photo.png) no-repeat;
-      }
-      .mui-input-row textarea {
-        height: 120px;
-      }
-    </style>
-    <header class="mui-bar mui-bar-nav">
-      <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-      <h1 class="mui-title">免费机票</h1>
-    </header>
-    <div class="share">
-      <h2>晒靓车领机票</h2>
-      <p class="tu">170405 KS1期</p>
-    </div>
-    <div class="carbox">
-      <img src="images/car1.jpg" alt="">
-    </div>
     <div class="mui-content">
-      <div id="slider" class="mui-slider">
-        <div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-          <a class="mui-control-item" href="#item1mobile">
-          活动奖项
-          </a>
-          <a class="mui-control-item" href="#item2mobile">
-          活动规则
-          </a>
-          <a class="mui-control-item" href="#item3mobile">
-          我要参与
-          </a>
-        </div>
-        <div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
-        <div class="mui-slider-group">
-          <div id="item1mobile" class="mui-slider-item mui-control-content mui-active mui-table-view">
-            <div id="scroll1" class="mui-scroll-wrapper">
-              <div class="mui-scroll">
-                <div class="items one">
-                  <div class="title">
-                    <h4>一等奖</h4>
-                  </div>
-                  <div class="item">
-                    <div class="body">
-                        <div class="extra">
-                          <h4>昆明-上海</h4>
-                          <p>2017年4月1日 <span class="mui-icon-extra mui-icon-extra-outline">15:40</p>
-                          <h3>免费机票</h3>
-                          <i>1 张</i>
-                        </div>
-                    </div>
-                    <div class="action">
-                      <a href="javascript:;"><span class="mui-icon-extra mui-icon-extra-gift"></span> 领取</a>
-                      <a href="javascript:;"><span class="mui-icon-extra mui-icon-extra-share"></span> 分享</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="items two">
-                  <div class="title">
-                    <h4>二等奖</h4>
-                  </div>
-                  <div class="item">
-                    <div class="body">
-                      <div class="extra">
-                          <h4>现金抵用券</h4>
-                          <h3>￥ 50</h3>
-                          <i>1 张</i>
-                        </div>
-                    </div>
-                    <div class="action">
-                      <a href="javascript:;"><span class="mui-icon-extra mui-icon-extra-prech"></span> 领取</a>
-                      
-                      <a href="javascript:;"><span class="mui-icon-extra mui-icon-extra-share"></span> 分享</a>
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-            </div>          
-          </div>
-          <div id="item2mobile" class="mui-slider-item mui-control-content mui-table-view">
-            <div id="scroll2" class="mui-scroll-wrapper">
-              <div class="mui-scroll">
-                  <div class="rule">
-                    <div class="box">
-                      <p>将您的爱车的照片发布到平台，分享您与爱车的幸福瞬间。平台会评选出当日最幸福的车主。并根据车主的幸福程度发放免费机票或代金券。</p>
-                    </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-          <div id="item3mobile" class="mui-slider-item mui-control-content">
-            <div id="scroll3" class="mui-scroll-wrapper">
-              <div class="mui-scroll">
-                  <button id="submit" class="mui-btn mui-btn-blue mui-btn-link mui-pull-right">发送</button>
-                  <div class="mui-content">
-                    <div class="mui-content-padded">
-                      <div class="mui-inline">参与活动</div>
-                      <div id="popover" class="mui-popover">
-                        <div class="mui-popover-arrow"></div>
-                        <div class="mui-scroll-wrapper">
-                          <div class="mui-scroll">
-              
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-                    <div class="row mui-input-row">
-                      <textarea id='question' class="mui-input-clear question" placeholder="分享您与爱车的幸福瞬间..."></textarea>
-                    </div>
-                    <p>选择图片(总大小10M以下)</p>
-                    <div id='image-list' class="row image-list">
-                      <div class="image-item space">
-                        <div class="image-close" id="img-1"></div>
-                        <div class="image-up">
-                            
-                        </div>
-                        <div class="file" id="image-1"></div>
-                      </div>
-                    </div>
-                    <p>联系方式</p>
-                    <div class="mui-input-row">
-                      <input id='contact' type="text" class="mui-input-clear contact" placeholder="(选填,方便我们联系你 )" />
-                    </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+          <a href="#middlePopover" class="mui-btn mui-btn-primary mui-btn-block mui-btn-outlined" style="padding: 5px 20px;"><img src="image/sun.png" alt=""></a>
+        </p>
     </div>
-  
-   <script src="js/mui.js"></script>
-   <script src="js/feedback.js" type="text/javascript" charset="utf-8"></script>
+    
+    <div id="middlePopover" class="mui-popover">
+          <div class="font">
+            <p>天色将晚 在我看着你的眼里色彩斑斓,有人装作善良 正在靠近你的身旁 要做你的伴,怕你太孤单 请你努力地习惯,噢 小心娱乐版 说你的表演还不够自然,阳光多灿烂 可我的自由行驶地缓慢,欲望难躲闪 我终于还是失去了判断,阳光多灿烂 可我的理想在慢慢腐烂,欲望难躲闪 我终于还是失去了判断,突如其来的崇拜 让你的心跳慢不下来,来不及释放情感 这儿没人管你喜欢不喜欢,不要怕伤害 噢 BABY SORRY 你是偶像派,请你心中的真爱 自动消失在人海,阳光多灿烂 可我的自由行驶地缓慢,欲望难躲闪 我终于还是失去了判断,阳光多灿烂 可我的理想在慢慢腐烂,生活多艰难 再见了我的冲动和浪漫,心里装着一片海 可眼前的路越走越窄,也许是成熟的不够快 眼看这乐趣变成了负担,表现得无奈 又舍不得离开,用自由来交换 这奢侈的晚餐</p>
+          </div>
+    </div>
+    <script src="js/mui.js"></script>
     <script>
-      mui.init({
-        swipeBack: true //启用右滑关闭功能
+      mui.init();
+      mui('.mui-scroll-wrapper').scroll();
+      mui('body').on('show', '.mui-popover', function(e) {
       });
-      (function($) {
-        $('#scroll').scroll({
-          indicators: true //是否显示滚动条
-        });
-        var segmentedControl = document.getElementById('segmentedControl');
-        $('.mui-input-group').on('change', 'input', function() {
-          if (this.checked) {
-            var styleEl = document.querySelector('input[name="style"]:checked');
-            var colorEl = document.querySelector('input[name="color"]:checked');
-            if (styleEl && colorEl) {
-              var style = styleEl.value;
-              var color = colorEl.value;
-              segmentedControl.className = 'mui-segmented-control' + (style ? (' mui-segmented-control-' + style) : '') + ' mui-segmented-control-' + color;
-            }
-          }
-        });
-      })(mui);
+      mui('body').on('hidden', '.mui-popover', function(e) {
+      });
     </script>
   </body>
 
